@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="master">
+<body>
+<main layout:fragment="contenido">
+    <div class="col-12">
+        <h2>Usuarios</h2>
+        <!-- Mensaje de éxito o error -->
+        <div th:classappend="'alert-' + (${clase != null} ? ${clase} : info)" th:if="${mensaje != null}" th:text="${mensaje}" class="alert"></div>
+        <!-- Enlace para agregar un nuevo usuario -->
+        <a class="btn btn-success mb-2" th:href="@{/usuarios/agregar}">Agregar Usuario</a>
+        <!-- Tabla para mostrar usuarios -->
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre de Usuario</th>
+                    <th>Tipo de Usuario</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!-- Iterar sobre la lista de usuarios -->
+                <tr th:each="usuario : ${usuarios}">
+                    <td th:text="${usuario.id}"></td>
+                    <td th:text="${usuario.nombreUsuario}"></td>
+                    <td th:text="${usuario.tipoUsuario}"></td>
+                    <td>
+                        <a class="btn btn-warning" th:href="@{/usuarios/editar/{id}(id=${usuario.id})}">Editar</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-danger" th:href="@{/usuarios/eliminar/{id}(id=${usuario.id})}">Eliminar</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+</body>
+</html>
+

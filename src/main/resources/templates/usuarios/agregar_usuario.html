@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="master">
+<body>
+<main layout:fragment="contenido">
+  <div class="col-12">
+    <h2>Agregar Usuario</h2>
+    <form th:object="${usuario}" th:action="@{/usuarios/agregar}" method="post">
+      <!-- Campo de entrada para el nombre de usuario -->
+      <div class="form-group">
+        <label for="nombreUsuario">Nombre de Usuario</label>
+        <input th:field="*{nombreUsuario}" id="nombreUsuario" type="text" class="form-control" placeholder="Nombre de Usuario">
+      </div>
+      <!-- Campo de entrada para la contraseña -->
+      <div class="form-group">
+        <label for="contrasena">Contraseña</label>
+        <input th:field="*{contrasena}" id="contrasena" type="password" class="form-control" placeholder="Contraseña">
+      </div>
+      <!-- Campo de selección para el tipo de usuario -->
+      <div class="form-group">
+        <label for="tipoUsuario">Tipo de Usuario</label>
+        <select th:field="*{tipoUsuario}" id="tipoUsuario" class="form-control">
+          <option value="Administrador">Administrador</option>
+          <option value="Vendedor">Vendedor</option>
+        </select>
+      </div>
+      <button class="btn btn-success" type="submit">Guardar</button>
+    </form>
+  </div>
+</main>
+</body>
+</html>
+

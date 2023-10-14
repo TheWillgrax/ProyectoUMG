@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        .login-container {
+            text-align: center;
+        }
+
+        .login-form-2 {
+            padding: 20px;
+            border: 1px solid #e5e5e5;
+            border-radius: 5px;
+            background-color: #ffffff;
+        }
+
+        h3 {
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .custom-control {
+            display: flex;
+            align-items: center;
+        }
+
+        .custom-checkbox {
+            margin: 0;
+        }
+
+        .btnSubmit {
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            padding: 10px 20px;
+        }
+
+        .ForgetPwd {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+<div class="container login-container">
+    <div class="row">
+        <div class="col-md-6 login-form-1"></div>
+        <div class="col-md-6 login-form-2">
+            <h3>Bienvenido al Sistema de la Heladeria</h3>
+            <form th:action="@{/login}" method="POST">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="nombreUsuario" placeholder="Usuario" />
+                </div>
+                <div class="form-group">
+                    <input type="password" name="contrasena" class="form-control" placeholder="Contraseña" />
+                </div>
+                <div class="form-group custom-control custom-checkbox small">
+                    <input type="checkbox" class="custom-control-input" name="remember-me" id="customCheck">
+                    <label class="custom-control-label" for="customCheck">Recordar</label>
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btnSubmit" value="Iniciar Sesión" />
+                </div>
+                <div class="form-group">
+                    <a href="#" class="ForgetPwd">¿Perdiste tu contraseña?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

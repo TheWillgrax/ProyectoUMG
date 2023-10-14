@@ -10,16 +10,20 @@
     <div class="collapse navbar-collapse" id="menu">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" th:href="@{/vender/}">Vender</a>
+                <a class="nav-link" th:href="@{/vender/}"
+                th:classappend="(${#httpServletRequest.requestURI} == '/vender/')? 'active':''" >Vender</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" th:href="@{/productos/mostrar}">Productos</a>
+                <a class="nav-link" th:href="@{/productos/mostrar}"
+                   th:classappend="(${#httpServletRequest.requestURI} == '/productos/mostrar')? 'active':''" >Productos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" th:href="@{/ventas/}">Ventas</a>
+                <a class="nav-link" th:href="@{/ventas/}"
+                   th:classappend="(${#httpServletRequest.requestURI} == '/ventas/')? 'active':''">Ventas</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" th:href="@{/usuarios/mostrar}">Usuarios</a>
+                <a class="nav-link" th:href="@{/usuarios/mostrar}"
+                    th:classappend="(${#httpServletRequest.requestURI} == '/usuarios/mostrar')? 'active':''">Usuarios</a>
         </ul>
     </div>
 </nav>

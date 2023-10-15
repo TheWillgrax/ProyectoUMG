@@ -1,5 +1,7 @@
 <nav th:fragment="navbar" xmlns:th="http://www.w3.org/1999/xhtml"
      class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <a class="navbar-brand" target="_blank" href="https://github.com/TheWillgrax">
         <img th:src="@{/img/Logo.png}" src="../static/Logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
         HELADERIA
@@ -10,20 +12,21 @@
     <div class="collapse navbar-collapse" id="menu">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" th:href="@{/vender/}"
-                th:classappend="(${#httpServletRequest.requestURI} == '/vender/')? 'active':''" >Vender</a>
+                <a class="nav-link" th:href="@{/productos/mostrar}"
+                   th:classappend="(${#httpServletRequest.requestURI} == '/productos/mostrar')? 'active':''"> <i class="bi bi-shop"></i> Productos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" th:href="@{/productos/mostrar}"
-                   th:classappend="(${#httpServletRequest.requestURI} == '/productos/mostrar')? 'active':''" >Productos</a>
+                <a class="nav-link" th:href="@{/vender/}"
+                   th:classappend="(${#httpServletRequest.requestURI} == '/vender/')? 'active':''" ><i class="bi bi-credit-card"></i> Transaccion</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" th:href="@{/ventas/}"
-                   th:classappend="(${#httpServletRequest.requestURI} == '/ventas/')? 'active':''">Ventas</a>
+                   th:classappend="(${#httpServletRequest.requestURI} == '/ventas/')? 'active':''"><i class="bi bi-archive"></i> Ventas</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" th:href="@{/usuarios/mostrar}"
-                    th:classappend="(${#httpServletRequest.requestURI} == '/usuarios/mostrar')? 'active':''">Usuarios</a>
+                    th:classappend="(${#httpServletRequest.requestURI} == '/usuarios/mostrar')? 'active':''"><i class="bi bi-person-check"></i> Usuarios</a>
         </ul>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </nav>

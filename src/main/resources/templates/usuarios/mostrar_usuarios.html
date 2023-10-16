@@ -9,7 +9,7 @@
         <!-- Mensaje de éxito o error -->
         <div th:classappend="'alert-' + (${clase != null} ? ${clase} : info)" th:if="${mensaje != null}" th:text="${mensaje}" class="alert"></div>
         <!-- Enlace para agregar un nuevo usuario -->
-        <a class="btn btn-success mb-2" th:href="@{/usuarios/agregar}">Agregar Usuario</a>
+        <a class="btn btn-success mb-2" th:href="@{/usuarios/agregar}"><i class="bi bi-person-plus-fill"></i> Agregar Usuario</a>
         <!-- Tabla para mostrar usuarios -->
         <div class="table-responsive">
             <table class="table table-bordered">

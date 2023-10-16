@@ -1,6 +1,7 @@
 package me.parzibyte.sistemaventasspringboot;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 @RequestMapping(path = "/productos")
@@ -22,7 +24,12 @@ public class ProductosController {
     }
 
     @GetMapping(value = "/mostrar")
-    public String mostrarProductos(Model model) {
+    public String mostrarProductos(Model model, @Param("palabraClave") String palabraClave ) {
+        model.addAttribute("palabraClave", palabraClave);
+        if (palabraClave != null){
+            model.addAttribute("productos", productosRepository.findAll(palabraClave));
+            return "productos/ver_productos";
+        }
         model.addAttribute("productos", productosRepository.findAll());
         return "productos/ver_productos";
     }
@@ -82,4 +89,5 @@ public class ProductosController {
                 .addFlashAttribute("clase", "success");
         return "redirect:/productos/agregar";
     }
+
 }

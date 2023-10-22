@@ -48,14 +48,14 @@ public class ReporteControlador {
         contentStream.setNonStrokingColor(Color.BLACK);
         contentStream.beginText();
         contentStream.newLineAtOffset(50, 780);
-        contentStream.showText("                   Empresa: Ice Cream               Dirección: 2da Avenida 1-47 Zona 1");
+        contentStream.showText("                     Empresa: Ice Cream               Dirección: 2da Avenida 1-47 Zona 1");
         contentStream.endText();
 
         contentStream.setFont(PDType1Font.HELVETICA_BOLD, 12);
         contentStream.setNonStrokingColor(Color.BLACK);
         contentStream.beginText();
         contentStream.newLineAtOffset(50, 760);
-        contentStream.showText("                  Teléfono: 41338903                Correo: Omar.mp2002@gmail.com");
+        contentStream.showText("                     Teléfono: 41338903                Correo: Omar.mp2002@gmail.com");
         contentStream.endText();
 
 
@@ -67,7 +67,7 @@ public class ReporteControlador {
         float titleY = 810;
         contentStream.beginText();
         contentStream.newLineAtOffset(titleX, titleY);
-        contentStream.showText("Reporte de Productos en Quetzales (GTQ)");
+        contentStream.showText("                     Reporte de Productos");
         contentStream.endText();
 
         // Línea horizontal bajo el título

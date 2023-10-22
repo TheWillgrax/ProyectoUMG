@@ -4,3 +4,9 @@ body {
     /*Para la barra inferior fija*/
     padding-bottom: 70px;
 }
+body {
+    display: flex;
+    background-image: url('../img/FondoP.jpg');
+    background-size: cover;
+    font-family: Arial, sans-serif;
+}

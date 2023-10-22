@@ -13,19 +13,19 @@
         </div>
         <form th:object="${producto}" th:action="@{/productos/agregar}" method="post">
             <div class="form-group">
-                <label for="nombre">Nombre del producto</label>
-                <input autocomplete="off" autofocus th:field="*{nombre}" id="nombre"
-                       placeholder="Escribe el nombre del producto" type="text"
-                       class="form-control" th:classappend="${#fields.hasErrors('nombre')} ? 'is-invalid' : ''">
-                <div class="invalid-feedback" th:errors="*{nombre}"></div>
-            </div>
-            <div class="form-group">
-                <label for="codigo">Código de barras</label>
+                <label for="codigo">Código</label>
                 <input autocomplete="off" th:field="*{codigo}" id="codigo" placeholder="Escribe el código del producto"
                        type="text"
                        class="form-control" th:classappend="${#fields.hasErrors('codigo')} ? 'is-invalid' : ''">
                 <div class="invalid-feedback" th:errors="*{codigo}"></div>
 
+            </div>
+            <div class="form-group">
+                <label for="nombre">Nombre del producto</label>
+                <input autocomplete="off" autofocus th:field="*{nombre}" id="nombre"
+                       placeholder="Escribe el nombre del producto" type="text"
+                       class="form-control" th:classappend="${#fields.hasErrors('nombre')} ? 'is-invalid' : ''">
+                <div class="invalid-feedback" th:errors="*{nombre}"></div>
             </div>
             <div class="form-group">
                 <label for="existencia">Existencia actual</label>
@@ -43,8 +43,8 @@
                 <div class="invalid-feedback" th:errors="*{precio}"></div>
 
             </div>
-            <button class="btn btn-success" type="submit">Guardar</button>
-            &nbsp;<a class="btn btn-warning" th:href="@{/productos/mostrar}">Ver todos</a>
+            <button class="btn btn-success" type="submit">Guardar  <i class="bi bi-floppy-fill"></i></button>
+            &nbsp;<a class="btn btn-warning" th:href="@{/productos/mostrar}">Ver todos  <i class="bi bi-eye-fill"></i></a>
         </form>
     </div>
 </main>

@@ -12,9 +12,9 @@
         </div>
         <form th:object="${producto}" th:action="@{/vender/agregar}" method="post">
             <div class="form-group">
-                <label for="codigo">Código de barras</label>
+                <label for="codigo">Código</label>
                 <input autofocus autocomplete="off" th:field="*{codigo}" id="codigo"
-                       placeholder="Escanea el código o escríbelo y presiona Enter"
+                       placeholder="Escriba el codigo del producto a vender"
                        type="text"
                        class="form-control" th:classappend="${#fields.hasErrors('codigo')} ? 'is-invalid' : ''">
                 <div class="invalid-feedback" th:errors="*{codigo}"></div>
@@ -22,7 +22,7 @@
             </div>
         </form>
         <form class="mb-2" th:action="@{/vender/terminar}" method="post">
-            <button type="submit" class="btn btn-success">Terminar&nbsp;<i class="fa fa-check"></i>
+            <button type="submit" class="btn btn-success">Concluir Venta &nbsp;<i class="fa fa-check"></i>
             </button>
             <a th:href="@{/vender/limpiar}" class="btn btn-danger">Cancelar venta&nbsp;<i
                     class="fa fa-trash"></i>
@@ -31,10 +31,10 @@
         <h1 th:text="${'Total: ' + total}"></h1>
         <div class="table-responsive">
             <table class="table table-bordered">
-                <thead>
+                <thead class="thead-dark">
                 <tr>
-                    <th>Nombre</th>
                     <th>Código</th>
+                    <th>Nombre</th>
                     <th>Precio</th>
                     <th>Cantidad</th>
                     <th>Total</th>
@@ -43,8 +43,8 @@
                 </thead>
                 <tbody>
                 <tr th:each="producto, iterador : ${session.carrito}">
-                    <td th:text="${producto.nombre}"></td>
                     <td th:text="${producto.codigo}"></td>
+                    <td th:text="${producto.nombre}"></td>
                     <td th:text="${producto.precio}"></td>
                     <td th:text="${producto.cantidad}"></td>
                     <td th:text="${producto.total}"></td>

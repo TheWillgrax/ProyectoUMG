@@ -31,23 +31,21 @@
             <a class="btn btn-success btn-agregar" th:href="@{/vender/}"><i class="bi bi-receipt"></i> Agregar Venta</a>
             <div class="table-responsive venta-table">
                 <table class="table table-bordered">
-                    <thead>
+                    <thead class="thead-dark">
                     <tr>
-                        <th>Fecha</th>
-                        <th>Total</th>
-                        <th>Productos</th>
+                        <th>Datos de Productos</th>
+                        <th>Fecha de la Venta</th>
+                        <th>Total General</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr th:each="venta : ${ventas}">
-                        <td th:text="${venta.fechaYHora}"></td>
-                        <td th:text="${venta.total}"></td>
                         <td>
                             <table class="table table-bordered producto-table">
                                 <thead>
                                 <tr>
+                                    <th>Código</th>
                                     <th>Nombre</th>
-                                    <th>Código de barras</th>
                                     <th>Cantidad vendida</th>
                                     <th>Precio</th>
                                     <th>Total</th>
@@ -55,8 +53,8 @@
                                 </thead>
                                 <tbody>
                                 <tr th:each="producto : ${venta.productos}">
-                                    <td th:text="${producto.nombre}"></td>
                                     <td th:text="${producto.codigo}"></td>
+                                    <td th:text="${producto.nombre}"></td>
                                     <td th:text="${producto.cantidad}"></td>
                                     <td th:text="${producto.precio}"></td>
                                     <td th:text="${producto.total}"></td>
@@ -64,6 +62,8 @@
                                 </tbody>
                             </table>
                         </td>
+                        <td th:text="${venta.fechaYHora}"></td>
+                        <td th:text="${venta.total}"></td>
                     </tr>
                     </tbody>
                 </table>

@@ -13,7 +13,7 @@
         <!-- Tabla para mostrar usuarios -->
         <div class="table-responsive">
             <table class="table table-bordered">
-                <thead>
+                <thead class="thead-dark">
                 <tr>
                     <th>ID</th>
                     <th>Nombre de Usuario</th>
@@ -29,10 +29,10 @@
                     <td th:text="${usuario.nombreUsuario}"></td>
                     <td th:text="${usuario.tipoUsuario}"></td>
                     <td>
-                        <a class="btn btn-warning" th:href="@{/usuarios/editar/{id}(id=${usuario.id})}">Editar</a>
+                        <a class="btn btn-warning" th:href="@{/usuarios/editar/{id}(id=${usuario.id})}">Editar  <i class="fa fa-edit"></i></a>
                     </td>
                     <td>
-                        <a class="btn btn-danger" th:href="@{/usuarios/eliminar/{id}(id=${usuario.id})}">Eliminar</a>
+                        <a class="btn btn-danger" th:href="@{/usuarios/eliminar/{id}(id=${usuario.id})}">Eliminar  <i class="fa fa-trash"></i></a>
                     </td>
                 </tr>
                 </tbody>

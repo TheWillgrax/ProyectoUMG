@@ -25,10 +25,10 @@
         <a class="btn btn-success mb-2" href="/report/products" ><i class="bi bi-bag-check-fill"></i> Generar Informe</a>
         <div class="table-responsive">
             <table class="table table-bordered">
-                <thead>
+                <thead class="thead-dark">
                 <tr>
-                    <th>Nombre</th>
                     <th>Código</th>
+                    <th>Nombre</th>
                     <th>Precio</th>
                     <th>Existencia</th>
                     <th>Editar</th>
@@ -37,8 +37,8 @@
                 </thead>
                 <tbody>
                 <tr th:each="producto : ${productos}">
-                    <td th:text="${producto.nombre}"></td>
                     <td th:text="${producto.codigo}"></td>
+                    <td th:text="${producto.nombre}"></td>
                     <td th:text="${producto.precio}"></td>
                     <td th:text="${producto.existencia}"></td>
                     <td>
